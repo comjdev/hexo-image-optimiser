@@ -1,0 +1,21 @@
+{
+	"name": "hexo-image-optimiser",
+	"version": "0.1.0",
+	"description": "A Hexo plugin to optimize images in your blog",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"hexo",
+		"plugin",
+		"image",
+		"optimization"
+	],
+	"author": "",
+	"license": "MIT",
+	"dependencies": {
+		"hexo": "^6.0.0",
+		"sharp": "^0.33.2"
+	}
+}
