@@ -1,17 +1,8 @@
-const path = require("path");
-const ImageProcessor = require("./libs/imageProcessor");
+"use strict";
 
-console.log("hexo-image-optimiser: Plugin initialized");
+const OptimizeImage = require("./lib/optimizeImage");
 
-const publicDir = path.join(hexo.base_dir, "public");
-const processor = new ImageProcessor(publicDir, {
-	quality: 80,
-	webp: true,
-	avif: false,
-});
-
-// Register the before_exit hook
-hexo.extend.filter.register("before_exit", async function () {
-	console.log("hexo-image-optimiser: before_exit hook triggered");
-	await processor.processImages();
+hexo.extend.filter.register("after_generate", function () {
+	console.log("hexo-image-optimiser: after_generate filter fired");
+	return OptimizeImage.call(hexo);
 });
